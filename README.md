@@ -1,4 +1,38 @@
 # RIFE v2.4 - Real Time Video Interpolation
+
+> This is a fork of the [arxiv2020-RIFE](https://github.com/hzwer/arXiv2020-RIFE) repository. The goal of this fork is to make the project installable as a library, e.g. through PyPi.
+> 
+> To install this library:
+> ```
+> pip install git+https://github.com/xhlulu/rife
+> ```
+> 
+> To use RIFE inside Python:
+> 
+> ```python
+> import rife
+> model = rife.RIFE_HDv2.Model()
+> ```
+> To use the command line interfaces:
+> ```bash
+> rife-video --help  # Corresponds to inference_video.py
+> rife-img --help  # Corresponds to inference_img.py
+> ```
+> The CLI can be used just like the `inference_video.py` and `inference_img.py` scripts. The following is adapted from the original readme:
+> ```bash
+> # You can use our demo video or your own video.
+> rife-video --exp=1 --video=video.mp4 
+> # (generate video_2X_xxfps.mp4)
+> rife-video python3 --exp=2 --video=video.mp4
+> # (for 4X interpolation)
+> rife-video --exp=1 --video=video.mp4 --scale=0.5
+> # Image Interpolation
+> rife-img --img img0.png img1.png --exp=4
+> ```
+> 
+> 
+> Everything below this comes from the original RIFE repo.
+
 ## [arXiv](https://arxiv.org/abs/2011.06294) | [YouTube](https://www.youtube.com/watch?v=60DX2T3zyVo&feature=youtu.be) | [Colab](https://colab.research.google.com/github/hzwer/arXiv2020-RIFE/blob/main/Colab_demo.ipynb) | [Tutorial](https://www.youtube.com/watch?v=gf_on-dbwyU&feature=emb_title) | [Demo](https://www.youtube.com/watch?v=oFnyq-e_b3g)
 
 ## Table of Contents

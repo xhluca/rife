@@ -12,7 +12,7 @@ setuptools.setup(
     version="0.0.1dev0",
     author="Xing Han Lu",
     author_email="github@xinghanlu.com",
-    description="A fork of arxiv2020-RIFE adapted for pypi installation",
+    description="A fork of arxiv2020-RIFE with PyPi installation and console scripts",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/xhlulu/rife",
@@ -24,4 +24,10 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     python_requires=">=3.6",
     install_requires=requirements,
+    entry_points=dict(
+        console_scripts=[
+            'rife-video=rife.console_scripts.inference_video:main',
+            'rife-img=rife.console_scripts.inference_img:main'
+        ]
+    )
 )
