@@ -9,7 +9,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="rife",
-    version="0.0.1",
+    version="0.0.1dev0",
     author="Xing Han Lu",
     author_email="github@xinghanlu.com",
     description="A fork of arxiv2020-RIFE adapted for pypi installation",
