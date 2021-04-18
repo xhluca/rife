@@ -23,7 +23,7 @@ The CLI can be used just like the `inference_video.py` and `inference_img.py` sc
 # You can use our demo video or your own video.
 rife-video --exp=1 --video=video.mp4 
 # (generate video_2X_xxfps.mp4)
-rife-video python3 --exp=2 --video=video.mp4
+rife-video --exp=2 --video=video.mp4
 # (for 4X interpolation)
 rife-video --exp=1 --video=video.mp4 --scale=0.5
 # Image Interpolation
