@@ -8,14 +8,14 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 
 setuptools.setup(
-    name="RIFE",
+    name="rife",
     version="0.0.1",
     author="Xing Han Lu",
     author_email="github@xinghanlu.com",
     description="A fork of arxiv2020-RIFE adapted for pypi installation",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/xhlulu/RIFE",
+    url="https://github.com/xhlulu/rife",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
