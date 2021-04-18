@@ -4,7 +4,7 @@ sys.path.append('.')
 import time
 import torch
 import torch.nn as nn
-from model.RIFE import Model
+from rife.RIFE import Model
 
 model = Model()
 model.eval()

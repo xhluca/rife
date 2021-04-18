@@ -8,8 +8,8 @@ import argparse
 import numpy as np
 from torch.nn import functional as F
 from pytorch_msssim import ssim_matlab
-# from model.RIFE2F15C import Model
-from model.RIFE import Model
+# from rife.RIFE2F15C import Model
+from rife.RIFE import Model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model = Model()

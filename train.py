@@ -8,7 +8,7 @@ import random
 import argparse
 import torch.distributed as dist
 
-from model.RIFE import Model
+from rife.RIFE import Model
 from dataset import *
 from torch.utils.data import DataLoader, Dataset
 from torch.utils.tensorboard import SummaryWriter
