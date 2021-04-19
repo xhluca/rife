@@ -86,11 +86,13 @@ def main():
 
     try:
         from rife.RIFE_HDv2 import Model
+        global model
         model = Model()
         model.load_model(args.modelDir, -1)
         print("Loaded v2.x HD model.")
     except:
         from rife.RIFE_HD import Model
+        global model
         model = Model()
         model.load_model(args.modelDir, -1)
         print("Loaded v1.x HD model")
