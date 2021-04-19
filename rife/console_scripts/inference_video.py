@@ -86,13 +86,11 @@ def main():
 
     try:
         from rife.RIFE_HDv2 import Model
-        global model
         model = Model()
         model.load_model(args.modelDir, -1)
         print("Loaded v2.x HD model.")
     except:
         from rife.RIFE_HD import Model
-        global model
         model = Model()
         model.load_model(args.modelDir, -1)
         print("Loaded v1.x HD model")
@@ -164,13 +162,12 @@ def main():
             pass
         read_buffer.put(None)
 
-    def make_inference(I0, I1, exp):
-        global model
+    def make_inference(I0, I1, exp, model):
         middle = model.inference(I0, I1, args.scale)
         if exp == 1:
             return [middle]
-        first_half = make_inference(I0, middle, exp=exp - 1)
-        second_half = make_inference(middle, I1, exp=exp - 1)
+        first_half = make_inference(I0, middle, exp=exp - 1, model=model)
+        second_half = make_inference(middle, I1, exp=exp - 1, model=model)
         return [*first_half, middle, *second_half]
         
     def pad_image(img):
@@ -222,7 +219,7 @@ def main():
                 beta = 1-alpha
                 output.append(torch.from_numpy(np.transpose((cv2.addWeighted(frame[:, :, ::-1], alpha, lastframe[:, :, ::-1], beta, 0)[:, :, ::-1].copy()), (2,0,1))).to(device, non_blocking=True).unsqueeze(0).float() / 255.)
         else:
-            output = make_inference(I0, I1, args.exp)
+            output = make_inference(I0, I1, args.exp, model)
         if args.montage:
             write_buffer.put(np.concatenate((lastframe, lastframe), 1))
             for mid in output:
